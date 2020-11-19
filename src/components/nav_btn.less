@@ -1,0 +1,18 @@
+@import "./../theme.less";
+
+@nav-hover-color: #005a9e;
+
+.nav-btn {
+  height: @nav-height;
+  width: @nav-height;
+  min-width: @nav-height;
+  background-color: @theme-color;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: @nav-hover-color;
+  }
+}

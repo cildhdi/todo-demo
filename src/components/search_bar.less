@@ -1,0 +1,30 @@
+@import "./../theme.less";
+
+@search-bg: rgb(195, 221, 247);
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 32px;
+  border-radius: 3px;
+  background-color: @search-bg;
+
+  &:hover {
+    background-color: white;
+  }
+
+  .search-icon {
+    color: @theme-color;
+    padding: 0 10px;
+  }
+
+  .input {
+    outline: none;
+    border: none;
+    flex: 1;
+    background-color: inherit;
+    font-size: 16px;
+  }
+}
