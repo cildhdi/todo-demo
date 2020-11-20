@@ -2,8 +2,9 @@ import { Model } from "dva";
 
 let nextId = 0;
 
-interface Todo {
+export interface Todo {
   id: number;
+  categoryId: number;
   name: string;
   complete: boolean;
 }
@@ -12,8 +13,8 @@ export default {
   namespace: "todo",
   state: [] as Todo[],
   reducers: {
-    put(state, { payload: name }) {
-      return [...state, { id: nextId++, name }];
+    put(state, { payload: { name, categoryId } }) {
+      return [...state, { id: nextId++, name, categoryId } as Todo];
     },
     toogle(state: Todo[], { payload: id }) {
       return state.map((todo) => {

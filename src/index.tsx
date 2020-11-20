@@ -8,6 +8,7 @@ const app = dva();
 
 app.model(require("./models/category").default);
 app.model(require("./models/todo").default);
+app.model(require("./models/currentCategory").default);
 
 app.router(() => (
   <React.StrictMode>
