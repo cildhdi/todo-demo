@@ -13,6 +13,7 @@ import { IconMenu } from "./IconMenu";
 import "./left.less";
 import { faCheck, faPaperclip } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { CategoryList } from "./CategoryList";
 
 const menus: [string, IconProp][] = [
   ["我的一天", faSun],
@@ -33,9 +34,12 @@ export const Left: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <div className={classNames("comp-left", className)}>
       <div className="items">
+        <div className="space" />
         {menus.map(([text, icon]) => (
           <IconMenu key={text} icon={icon} text={text} />
         ))}
+        <div className="space" />
+        <CategoryList />
       </div>
       <div className="bottom">
         {bottomIcons.map((icon) => (
