@@ -41,6 +41,7 @@ export const TodoList = connect(
           .filter((todo) => todo.categoryId === props.currentCategory)
           .map((todo) => (
             <TodoItem
+              key={todo.id}
               item={todo}
               onClick={() =>
                 props.dispatch({
