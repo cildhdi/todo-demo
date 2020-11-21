@@ -12,6 +12,9 @@ export default {
   state: [
     { id: nextId++, name: "默认分类" },
     { id: nextId++, name: "分类 2" },
+    { id: nextId++, name: "分类 3" },
+    { id: nextId++, name: "分类 4" },
+    { id: nextId++, name: "分类 5" },
   ] as Category[],
   reducers: {
     put(state, { payload: name }) {

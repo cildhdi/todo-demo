@@ -7,9 +7,14 @@ export const IconMenu: React.FC<{
   icon: IconProp;
   text: string;
   selected?: boolean;
-}> = ({ icon, selected, text }) => {
+  onClick?: () => void;
+}> = ({ icon, selected, text, onClick }) => {
   return (
-    <div className="icon-menu">
+    <div
+      className="icon-menu"
+      style={selected ? { backgroundColor: "rgb(237,237,237)" } : {}}
+      onClick={onClick}
+    >
       <FontAwesomeIcon icon={icon} className="icon" />
       <span>{text}</span>
     </div>

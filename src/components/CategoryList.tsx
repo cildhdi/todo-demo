@@ -5,21 +5,35 @@ import { Category } from "./../models/category";
 import { AddItem } from "./AddItem";
 import { IconMenu } from "./IconMenu";
 
-export const CategoryList = connect(
-  ({ category }: { category: Category[] }) => ({
-    category,
-  })
-)(function ({ category, dispatch }: { category: Category[]; dispatch: any }) {
+export const CategoryList = connect(({ category, currentCategory }: any) => ({
+  category,
+  currentCategory,
+}))(function (props: {
+  category: Category[];
+  currentCategory: number;
+  dispatch: any;
+}) {
   return (
     <>
-      {category.map((cat) => (
-        <IconMenu text={cat.name} icon={faList} />
+      {props.category.map((cat) => (
+        <IconMenu
+          key={cat.id}
+          text={cat.name}
+          icon={faList}
+          selected={cat.id === props.currentCategory}
+          onClick={() =>
+            props.dispatch({
+              type: "currentCategory/put",
+              payload: cat.id,
+            })
+          }
+        />
       ))}
       <AddItem
         text="新建分类"
         onConfirm={(name) => {
           if (name) {
-            dispatch({
+            props.dispatch({
               type: "category/put",
               payload: name,
             });

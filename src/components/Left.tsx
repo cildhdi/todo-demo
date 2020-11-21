@@ -43,8 +43,8 @@ export const Left: React.FC<{ className?: string }> = ({ className }) => {
         <CategoryList />
       </div>
       <div className="bottom">
-        {bottomIcons.map((icon) => (
-          <FontAwesomeIcon icon={icon} className="button" />
+        {bottomIcons.map((icon, i) => (
+          <FontAwesomeIcon key={i} icon={icon} className="button" />
         ))}
       </div>
     </div>

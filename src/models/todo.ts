@@ -10,11 +10,16 @@ export interface Todo {
 }
 
 export default {
-  namespace: "todo",
-  state: [] as Todo[],
+  namespace: "todos",
+  state: [
+    { name: "Todo item 1", id: nextId++, categoryId: 0, complete: false },
+    { name: "Todo item 2", id: nextId++, categoryId: 0, complete: false },
+    { name: "Todo item 3", id: nextId++, categoryId: 0, complete: false },
+    { name: "Todo item 4", id: nextId++, categoryId: 0, complete: false },
+  ] as Todo[],
   reducers: {
     put(state, { payload: { name, categoryId } }) {
-      return [...state, { id: nextId++, name, categoryId } as Todo];
+      return [{ id: nextId++, name, categoryId } as Todo, ...state];
     },
     toogle(state: Todo[], { payload: id }) {
       return state.map((todo) => {

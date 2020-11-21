@@ -1,0 +1,19 @@
+@import "../theme.less";
+
+.todo-item {
+  text-align: left;
+  font-size: 15px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(237, 237, 237);
+  cursor: pointer;
+  .icon {
+    padding: 0 15px;
+    color: @theme-color;
+  }
+
+  &:hover {
+    background-color: rgb(237, 237, 237);
+  }
+}
